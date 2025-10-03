@@ -58,7 +58,6 @@
           </range>
         </ray>
         <topic>/scan</topic>
-        <frame_id>base_laser</frame_id>
         <always_on>true</always_on>
       </sensor>
     </link>
@@ -214,9 +213,16 @@
       <odom_frame>odom</odom_frame>
       <robot_base_frame>base_link</robot_base_frame>
       <odom_publisher>true</odom_publisher>
-      <publish_tf>true</publish_tf>
+      <publish_tf>false</publish_tf>
       <max_linear_speed>0.7</max_linear_speed>
       <max_angular_speed>1.2</max_angular_speed>
+    </plugin>
+
+    <!-- Publish TF via PosePublisher (bridged to ROS2 /tf) -->
+    <plugin name="gz::sim::systems::PosePublisher" filename="libgz-sim-pose-publisher-system.so">
+      <publish_tf>true</publish_tf>
+      <publish_tf_per_link>false</publish_tf_per_link>
+      <update_frequency>30</update_frequency>
     </plugin>
 
   </model>

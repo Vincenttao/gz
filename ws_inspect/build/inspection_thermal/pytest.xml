@@ -1,7 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="0.520" timestamp="2025-10-03T17:16:42.036782" hostname="vincent-PC18"><testcase classname="inspection_thermal.tests.test_thermal_alarm" name="test_alarm_engages_and_clears" time="0.056"><error message="failed on setup with &quot;RuntimeError: Failed opening file /home/vincent/.ros/log/python3_8241_1759483002438.log for writing: Permission denied&quot;">tests/test_thermal_alarm.py:20: in rclpy_runtime
-    rclpy.init()
-/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py:88: in init
-    context.init(args, domain_id=domain_id)
-/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/context.py:106: in init
-    _rclpy.rclpy_logging_configure(self.__context)
-E   RuntimeError: Failed opening file /home/vincent/.ros/log/python3_8241_1759483002438.log for writing: Permission denied</error></testcase></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="0.447" timestamp="2025-10-03T17:54:03.547071" hostname="vincent-PC18"><testcase classname="inspection_thermal.tests.test_thermal_alarm" name="test_alarm_engages_and_clears" time="0.065" /></testsuite></testsuites>

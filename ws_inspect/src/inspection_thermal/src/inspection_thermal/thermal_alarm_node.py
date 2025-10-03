@@ -11,8 +11,11 @@ from geometry_msgs.msg import Pose
 from rclpy.duration import Duration
 from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
-from rclpy.parameter import ParameterValue
-from rcl_interfaces.msg import ParameterDescriptor, ParameterType
+from rcl_interfaces.msg import (
+    ParameterDescriptor,
+    ParameterType,
+    ParameterValue as ParameterValueMsg,
+)
 from rclpy.qos import QoSHistoryPolicy, QoSProfile, QoSReliabilityPolicy
 from rclpy.time import Time as RclTime
 from std_msgs.msg import Bool, String
@@ -47,7 +50,7 @@ class ThermalAlarmNode(Node):
 
         self.declare_parameter(
             "hot_targets",
-            ParameterValue(
+            ParameterValueMsg(
                 type=ParameterType.PARAMETER_STRING_ARRAY,
                 string_array_value=[],
             ),

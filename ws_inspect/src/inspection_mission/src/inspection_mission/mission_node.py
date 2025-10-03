@@ -23,11 +23,16 @@ except ModuleNotFoundError:  # pragma: no cover - fallback only exercised in tes
         Goal = _NavigateGoal
 
 
-from rcl_interfaces.msg import ParameterDescriptor, ParameterType, SetParametersResult
+from rcl_interfaces.msg import (
+    ParameterDescriptor,
+    ParameterType,
+    ParameterValue as ParameterValueMsg,
+    SetParametersResult,
+)
 from rclpy.action import ActionClient
 from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
-from rclpy.parameter import Parameter, ParameterValue
+from rclpy.parameter import Parameter
 from rclpy.qos import QoSHistoryPolicy, QoSProfile, QoSReliabilityPolicy
 from rclpy.task import Future
 from std_msgs.msg import Bool, String
@@ -63,7 +68,7 @@ class MissionNode(Node):
         self.declare_parameter("alarm_stop", True)
         self.declare_parameter(
             "waypoints",
-            ParameterValue(
+            ParameterValueMsg(
                 type=ParameterType.PARAMETER_STRING_ARRAY,
                 string_array_value=[],
             ),

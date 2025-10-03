@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="2" failures="0" skipped="0" tests="2" time="0.562" timestamp="2025-10-03T15:43:09.217915" hostname="vincent-PC18"><testcase classname="inspection_mission.tests.test_mission_node" name="test_waypoint_sequence_advances_and_completes" time="0.057"><error message="failed on setup with &quot;RuntimeError: Failed opening file /home/vincent/.ros/log/python3_3160_1759477389688.log for writing: Permission denied&quot;">tests/test_mission_node.py:64: in rclpy_runtime
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="2" failures="0" skipped="0" tests="2" time="0.687" timestamp="2025-10-03T17:16:42.230399" hostname="vincent-PC18"><testcase classname="inspection_mission.tests.test_mission_node" name="test_waypoint_sequence_advances_and_completes" time="0.055"><error message="failed on setup with &quot;RuntimeError: Failed opening file /home/vincent/.ros/log/python3_8243_1759483002828.log for writing: Permission denied&quot;">tests/test_mission_node.py:64: in rclpy_runtime
     rclpy.init()
 /opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py:88: in init
     context.init(args, domain_id=domain_id)
 /opt/ros/jazzy/lib/python3.12/site-packages/rclpy/context.py:106: in init
     _rclpy.rclpy_logging_configure(self.__context)
-E   RuntimeError: Failed opening file /home/vincent/.ros/log/python3_3160_1759477389688.log for writing: Permission denied</error></testcase><testcase classname="inspection_mission.tests.test_mission_node" name="test_alarm_triggers_cancel_when_requested" time="0.000"><error message="failed on setup with &quot;RuntimeError: Failed opening file /home/vincent/.ros/log/python3_3160_1759477389688.log for writing: Permission denied&quot;">tests/test_mission_node.py:64: in rclpy_runtime
+E   RuntimeError: Failed opening file /home/vincent/.ros/log/python3_8243_1759483002828.log for writing: Permission denied</error></testcase><testcase classname="inspection_mission.tests.test_mission_node" name="test_alarm_triggers_cancel_when_requested" time="0.000"><error message="failed on setup with &quot;RuntimeError: Failed opening file /home/vincent/.ros/log/python3_8243_1759483002828.log for writing: Permission denied&quot;">tests/test_mission_node.py:64: in rclpy_runtime
     rclpy.init()
 /opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py:88: in init
     context.init(args, domain_id=domain_id)
 /opt/ros/jazzy/lib/python3.12/site-packages/rclpy/context.py:106: in init
     _rclpy.rclpy_logging_configure(self.__context)
-E   RuntimeError: Failed opening file /home/vincent/.ros/log/python3_3160_1759477389688.log for writing: Permission denied</error></testcase></testsuite></testsuites>
+E   RuntimeError: Failed opening file /home/vincent/.ros/log/python3_8243_1759483002828.log for writing: Permission denied</error></testcase></testsuite></testsuites>

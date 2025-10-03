@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="0.447" timestamp="2025-10-03T17:54:03.547071" hostname="vincent-PC18"><testcase classname="inspection_thermal.tests.test_thermal_alarm" name="test_alarm_engages_and_clears" time="0.065" /></testsuite></testsuites>

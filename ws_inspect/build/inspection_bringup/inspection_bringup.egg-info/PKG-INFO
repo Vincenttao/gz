@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: inspection-bringup
-Version: 0.1.0
-Summary: Launch and configuration entry points for the inspection simulation stack.
-Maintainer: Vincent
-Maintainer-email: vincent@example.com
-License: Apache-2.0

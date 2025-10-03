@@ -1,1 +1,0 @@
-/home/vincent/gz/ws_inspect/src/inspection_bringup/launch/sim_all.launch.py

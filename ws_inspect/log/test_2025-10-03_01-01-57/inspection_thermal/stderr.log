@@ -1,6 +1,0 @@
-
-=============================== warnings summary ===============================
-tests/test_thermal_alarm.py::test_alarm_engages_and_clears
-  Warning: Failed to fini rosout publisher: rcl node implementation is invalid, at ./src/rcl/node.c:390
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html

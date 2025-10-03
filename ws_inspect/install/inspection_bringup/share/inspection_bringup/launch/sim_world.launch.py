@@ -1,1 +1,0 @@
-/home/vincent/gz/ws_inspect/build/inspection_bringup/launch/sim_world.launch.py

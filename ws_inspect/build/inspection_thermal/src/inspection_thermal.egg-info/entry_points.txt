@@ -1,2 +1,0 @@
-[console_scripts]
-thermal_alarm_node = inspection_thermal.thermal_alarm_node:main

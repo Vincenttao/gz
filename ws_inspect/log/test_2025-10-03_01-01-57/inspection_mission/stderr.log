@@ -1,7 +1,0 @@
-
-=============================== warnings summary ===============================
-tests/test_mission_node.py::test_waypoint_sequence_advances_and_completes
-tests/test_mission_node.py::test_alarm_triggers_cancel_when_requested
-  Warning: Failed to fini rosout publisher: rcl node implementation is invalid, at ./src/rcl/node.c:390
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html

@@ -1,5 +1,11 @@
 package.xml
 setup.py
+../../build/inspection_bringup/inspection_bringup.egg-info/PKG-INFO
+../../build/inspection_bringup/inspection_bringup.egg-info/SOURCES.txt
+../../build/inspection_bringup/inspection_bringup.egg-info/dependency_links.txt
+../../build/inspection_bringup/inspection_bringup.egg-info/requires.txt
+../../build/inspection_bringup/inspection_bringup.egg-info/top_level.txt
+../../build/inspection_bringup/inspection_bringup.egg-info/zip-safe
 config/costmap_common.yaml
 config/localization.yaml
 config/nav2_params.yaml

@@ -3,7 +3,12 @@
 from pathlib import Path
 
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, OpaqueFunction, SetEnvironmentVariable, ExecuteProcess
+from launch.actions import (
+    DeclareLaunchArgument,
+    OpaqueFunction,
+    SetEnvironmentVariable,
+    ExecuteProcess,
+)
 from launch.substitutions import LaunchConfiguration
 
 
@@ -14,11 +19,19 @@ def _launch_setup(context):
     world_path = (assets_dir / "worlds" / world_name).resolve()
 
     command = ["gz", "sim", "-r", str(world_path)]
-    if headless_value in ("true", "1", "yes"):  # ensure headless option toggles renderer
+    if headless_value in (
+        "true",
+        "1",
+        "yes",
+    ):  # ensure headless option toggles renderer
         command.append("--headless-rendering")
 
     return [
-        ExecuteProcess(cmd=command, output="screen", additional_env={"GZ_SIM_RESOURCE_PATH": str(assets_dir)})
+        ExecuteProcess(
+            cmd=command,
+            output="screen",
+            additional_env={"GZ_SIM_RESOURCE_PATH": str(assets_dir)},
+        )
     ]
 
 
@@ -35,8 +48,14 @@ def generate_launch_description() -> LaunchDescription:
                 default_value="true",
                 description="Run Gazebo without rendering windows",
             ),
-            SetEnvironmentVariable("IGN_GAZEBO_RESOURCE_PATH", str(Path(__file__).resolve().parents[2] / "sim_world_assets")),
-            SetEnvironmentVariable("GZ_SIM_RESOURCE_PATH", str(Path(__file__).resolve().parents[2] / "sim_world_assets")),
+            SetEnvironmentVariable(
+                "IGN_GAZEBO_RESOURCE_PATH",
+                str(Path(__file__).resolve().parents[2] / "sim_world_assets"),
+            ),
+            SetEnvironmentVariable(
+                "GZ_SIM_RESOURCE_PATH",
+                str(Path(__file__).resolve().parents[2] / "sim_world_assets"),
+            ),
             OpaqueFunction(function=_launch_setup),
         ]
     )

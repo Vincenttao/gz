@@ -8,19 +8,24 @@ import rclpy
 from action_msgs.msg import GoalStatus
 from builtin_interfaces.msg import Time
 from geometry_msgs.msg import PoseStamped, PoseWithCovarianceStamped
+
 # Nav2 action is required at runtime; provide a lightweight stub for test environments
 # where the package may not be installed (e.g., restricted CI sandboxes).
 try:
     from nav2_msgs.action import NavigateToPose
 except ModuleNotFoundError:  # pragma: no cover - fallback only exercised in tests
+
     class _NavigateGoal:  # minimal stand-in matching the interface used in tests
         def __init__(self) -> None:
             self.pose = PoseStamped()
 
     class NavigateToPose:  # type: ignore
         Goal = _NavigateGoal
+
+
 from rcl_interfaces.msg import ParameterDescriptor, ParameterType, SetParametersResult
 from rclpy.action import ActionClient
+from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
 from rclpy.parameter import Parameter, ParameterValue
 from rclpy.qos import QoSHistoryPolicy, QoSProfile, QoSReliabilityPolicy
@@ -43,9 +48,13 @@ class MissionNode(Node):
             reliability=QoSReliabilityPolicy.RELIABLE,
         )
 
-        self._waypoint_pub = self.create_publisher(PoseStamped, "/inspection/waypoint_goal", qos)
+        self._waypoint_pub = self.create_publisher(
+            PoseStamped, "/inspection/waypoint_goal", qos
+        )
         self._event_pub = self.create_publisher(String, "/inspection/event", qos)
-        self._alarm_sub = self.create_subscription(Bool, "/inspection/alarm", self._alarm_callback, qos)
+        self._alarm_sub = self.create_subscription(
+            Bool, "/inspection/alarm", self._alarm_callback, qos
+        )
         self._amcl_sub = self.create_subscription(
             PoseWithCovarianceStamped, "/amcl_pose", self._amcl_callback, qos
         )
@@ -54,7 +63,10 @@ class MissionNode(Node):
         self.declare_parameter("alarm_stop", True)
         self.declare_parameter(
             "waypoints",
-            ParameterValue(string_array_value=[]),
+            ParameterValue(
+                type=ParameterType.PARAMETER_STRING_ARRAY,
+                string_array_value=[],
+            ),
             descriptor=ParameterDescriptor(type=ParameterType.PARAMETER_STRING_ARRAY),
         )
 
@@ -64,6 +76,7 @@ class MissionNode(Node):
         self._waypoints = self._parse_waypoints(self._raw_waypoints)
 
         if action_client_factory is None:
+
             def _default_action_client(node: Node) -> ActionClient:
                 return ActionClient(node, NavigateToPose, "navigate_to_pose")
 
@@ -91,7 +104,9 @@ class MissionNode(Node):
     def _mission_step(self) -> None:
         if not self._mission_started and self._waypoints:
             self._mission_started = True
-            self._emit_event("MISSION_STARTED", f"{len(self._waypoints)} waypoints queued")
+            self._emit_event(
+                "MISSION_STARTED", f"{len(self._waypoints)} waypoints queued"
+            )
 
         if not self._waypoints:
             return
@@ -125,7 +140,9 @@ class MissionNode(Node):
         self._waypoint_pub.publish(pose)
         self._last_waypoint = pose
 
-        goal_future = self._action_client.send_goal_async(goal_msg, feedback_callback=self._feedback_callback)
+        goal_future = self._action_client.send_goal_async(
+            goal_msg, feedback_callback=self._feedback_callback
+        )
         goal_future.add_done_callback(self._goal_response_callback)
 
     def _goal_response_callback(self, future: Future) -> None:
@@ -149,11 +166,15 @@ class MissionNode(Node):
         if status == GoalStatus.STATUS_SUCCEEDED:
             self._emit_event("WAYPOINT_REACHED", f"index={self._current_index}")
         else:
-            self._emit_event("WAYPOINT_ABORTED", f"index={self._current_index}|status={status}")
+            self._emit_event(
+                "WAYPOINT_ABORTED", f"index={self._current_index}|status={status}"
+            )
 
         self._advance_index()
 
-    def _feedback_callback(self, feedback) -> None:  # noqa: D401 - Nav2 feedback structure
+    def _feedback_callback(
+        self, feedback
+    ) -> None:  # noqa: D401 - Nav2 feedback structure
         # Feedback is not currently used but hook kept for future introspection.
         return
 
@@ -164,8 +185,14 @@ class MissionNode(Node):
         if msg.data and not self._alarm_active:
             self._alarm_active = True
             self._emit_event("THERMAL_ALARM_ENTER", "Alarm engaged")
-            if self._alarm_stop and self._navigation_active and self._current_goal_handle is not None:
-                cancel_future = self._action_client.cancel_goal_async(self._current_goal_handle)
+            if (
+                self._alarm_stop
+                and self._navigation_active
+                and self._current_goal_handle is not None
+            ):
+                cancel_future = self._action_client.cancel_goal_async(
+                    self._current_goal_handle
+                )
                 cancel_future.add_done_callback(self._cancel_done_callback)
         elif not msg.data and self._alarm_active:
             self._alarm_active = False
@@ -253,9 +280,11 @@ def main(args: Optional[List[str]] = None) -> None:
     node = MissionNode()
     try:
         rclpy.spin(node)
+    except (KeyboardInterrupt, ExternalShutdownException):
+        pass
     finally:
         node.destroy_node()
-        rclpy.shutdown()
+        rclpy.try_shutdown()
 
 
 if __name__ == "__main__":

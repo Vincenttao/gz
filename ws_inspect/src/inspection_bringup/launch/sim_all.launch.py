@@ -3,7 +3,12 @@
 from pathlib import Path
 
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction
+from launch.actions import (
+    DeclareLaunchArgument,
+    IncludeLaunchDescription,
+    OpaqueFunction,
+    SetEnvironmentVariable,
+)
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
@@ -69,12 +74,38 @@ def _launch_setup(context):
         ],
     )
 
-    return [world_launch, nav2_launch, mission_node, thermal_node]
+    bridge_topics = [
+        "/clock@rosgraph_msgs/msg/Clock@gz.msgs.Clock",
+        "/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist",
+        "/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry",
+        "/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan",
+        "/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V",
+        "/tf_static@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V",
+    ]
+
+    bridge_node = Node(
+        package="ros_gz_bridge",
+        executable="parameter_bridge",
+        name="ros_gz_bridge",
+        arguments=bridge_topics,
+        output="screen",
+        parameters=[
+            {
+                "qos_overrides./tf_static.publisher.durability": "transient_local",
+                "qos_overrides./tf_static.subscription.durability": "transient_local",
+            }
+        ],
+    )
+
+    return [world_launch, bridge_node, nav2_launch, mission_node, thermal_node]
 
 
 def generate_launch_description() -> LaunchDescription:
     return LaunchDescription(
         [
+            SetEnvironmentVariable(
+                "ROS_LOG_DIR", str((LAUNCH_DIR.parents[3] / "log").resolve())
+            ),
             DeclareLaunchArgument(
                 "world",
                 default_value="port_belt_corridor_fixed.sdf",

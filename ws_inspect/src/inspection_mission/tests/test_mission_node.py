@@ -82,7 +82,9 @@ def test_waypoint_sequence_advances_and_completes():
         node = MissionNode(action_client_factory=lambda node: mock_client)
     except RCLError as exc:
         pytest.skip(f"RMW unavailable: {exc}")
-    node._waypoints = node._parse_waypoints([_make_waypoint(1.0, 0.0), _make_waypoint(2.0, 0.5)])
+    node._waypoints = node._parse_waypoints(
+        [_make_waypoint(1.0, 0.0), _make_waypoint(2.0, 0.5)]
+    )
     node._loop = False
 
     try:
@@ -91,7 +93,9 @@ def test_waypoint_sequence_advances_and_completes():
 
         mock_client.complete_latest(GoalStatus.STATUS_SUCCEEDED)
         assert any("WAYPOINT_REACHED" in event for event in node._event_history)
-        assert len(mock_client.sent_goals) == 2  # next waypoint dispatched automatically
+        assert (
+            len(mock_client.sent_goals) == 2
+        )  # next waypoint dispatched automatically
 
         mock_client.complete_latest(GoalStatus.STATUS_SUCCEEDED)
         assert any("MISSION_COMPLETE" in event for event in node._event_history)

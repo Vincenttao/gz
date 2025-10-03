@@ -9,6 +9,7 @@ import rclpy
 from builtin_interfaces.msg import Time
 from geometry_msgs.msg import Pose
 from rclpy.duration import Duration
+from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
 from rclpy.parameter import ParameterValue
 from rcl_interfaces.msg import ParameterDescriptor, ParameterType
@@ -29,7 +30,9 @@ class ThermalAlarmNode(Node):
 
     def __init__(
         self,
-        pose_provider: Optional[Callable[[], Optional[Tuple[float, float, float]]]] = None,
+        pose_provider: Optional[
+            Callable[[], Optional[Tuple[float, float, float]]]
+        ] = None,
     ) -> None:
         super().__init__("thermal_alarm_node")
 
@@ -44,7 +47,10 @@ class ThermalAlarmNode(Node):
 
         self.declare_parameter(
             "hot_targets",
-            ParameterValue(string_array_value=[]),
+            ParameterValue(
+                type=ParameterType.PARAMETER_STRING_ARRAY,
+                string_array_value=[],
+            ),
             descriptor=ParameterDescriptor(type=ParameterType.PARAMETER_STRING_ARRAY),
         )
         self.declare_parameter("trigger_distance", 2.0)
@@ -61,14 +67,18 @@ class ThermalAlarmNode(Node):
 
         if pose_provider is None:
             self._tf_buffer = Buffer(cache_time=Duration(seconds=2.0))
-            self._tf_listener = TransformListener(self._tf_buffer, self, spin_thread=True)
+            self._tf_listener = TransformListener(
+                self._tf_buffer, self, spin_thread=True
+            )
             self._pose_provider = self._lookup_robot_position
         else:
             self._tf_buffer = None
             self._tf_listener = None
             self._pose_provider = pose_provider
 
-        self._timer = self.create_timer(1.0 / float(self._check_rate), self._evaluate_alarm)
+        self._timer = self.create_timer(
+            1.0 / float(self._check_rate), self._evaluate_alarm
+        )
         self._publish_alarm(False)
 
     # ------------------------------------------------------------------
@@ -96,7 +106,10 @@ class ThermalAlarmNode(Node):
                 self._emit_event("THERMAL_ALARM_CLEAR", "No targets configured")
             return
 
-        min_distance = min(hypot(pose[0] - target[0], pose[1] - target[1]) for target in self._hot_targets)
+        min_distance = min(
+            hypot(pose[0] - target[0], pose[1] - target[1])
+            for target in self._hot_targets
+        )
         if self._alarm_state:
             if min_distance >= self._trigger_distance + self._hysteresis:
                 self._alarm_state = False
@@ -130,7 +143,9 @@ class ThermalAlarmNode(Node):
                 except json.JSONDecodeError:
                     continue
             if isinstance(target, Pose):
-                targets.append((target.position.x, target.position.y, target.position.z))
+                targets.append(
+                    (target.position.x, target.position.y, target.position.z)
+                )
                 continue
             if not isinstance(target, dict):
                 continue
@@ -155,9 +170,11 @@ def main(args: Optional[List[str]] = None) -> None:
     node = ThermalAlarmNode()
     try:
         rclpy.spin(node)
+    except (KeyboardInterrupt, ExternalShutdownException):
+        pass
     finally:
         node.destroy_node()
-        rclpy.shutdown()
+        rclpy.try_shutdown()
 
 
 if __name__ == "__main__":

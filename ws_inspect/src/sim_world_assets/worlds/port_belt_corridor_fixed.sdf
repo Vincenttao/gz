@@ -146,5 +146,11 @@
       <pose>-2.0 0.0 0 0 0 0</pose>
       <uri>file://models/ped_actor/model.sdf</uri>
     </include>
+
+    <include>
+      <name>inspection_bot</name>
+      <pose>0 -0.5 0 0 0 0</pose>
+      <uri>file://models/inspection_bot/model.sdf</uri>
+    </include>
   </world>
 </sdf>

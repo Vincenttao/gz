@@ -4,7 +4,11 @@ from pathlib import Path
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, OpaqueFunction, IncludeLaunchDescription
+from launch.actions import (
+    DeclareLaunchArgument,
+    OpaqueFunction,
+    IncludeLaunchDescription,
+)
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 
@@ -20,7 +24,11 @@ def _launch_setup(context):
 
     navigation_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            str(Path(get_package_share_directory("nav2_bringup")) / "launch" / "navigation_launch.py")
+            str(
+                Path(get_package_share_directory("nav2_bringup"))
+                / "launch"
+                / "navigation_launch.py"
+            )
         ),
         launch_arguments={
             "use_sim_time": use_sim_time_value,
@@ -33,7 +41,11 @@ def _launch_setup(context):
     if map_path:
         localization_launch = IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
-                str(Path(get_package_share_directory("nav2_bringup")) / "launch" / "localization_launch.py")
+                str(
+                    Path(get_package_share_directory("nav2_bringup"))
+                    / "launch"
+                    / "localization_launch.py"
+                )
             ),
             launch_arguments={
                 "use_sim_time": use_sim_time_value,

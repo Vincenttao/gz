@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from datetime import datetime, timezone
 from math import hypot
 from typing import Callable, List, Optional, Tuple
@@ -9,6 +10,8 @@ from builtin_interfaces.msg import Time
 from geometry_msgs.msg import Pose
 from rclpy.duration import Duration
 from rclpy.node import Node
+from rclpy.parameter import ParameterValue
+from rcl_interfaces.msg import ParameterDescriptor, ParameterType
 from rclpy.qos import QoSHistoryPolicy, QoSProfile, QoSReliabilityPolicy
 from rclpy.time import Time as RclTime
 from std_msgs.msg import Bool, String
@@ -39,7 +42,11 @@ class ThermalAlarmNode(Node):
         self._alarm_pub = self.create_publisher(Bool, "/inspection/alarm", qos)
         self._event_pub = self.create_publisher(String, "/inspection/event", qos)
 
-        self.declare_parameter("hot_targets", [])
+        self.declare_parameter(
+            "hot_targets",
+            ParameterValue(string_array_value=[]),
+            descriptor=ParameterDescriptor(type=ParameterType.PARAMETER_STRING_ARRAY),
+        )
         self.declare_parameter("trigger_distance", 2.0)
         self.declare_parameter("hysteresis", 0.3)
         self.declare_parameter("check_rate_hz", 10)
@@ -117,6 +124,11 @@ class ThermalAlarmNode(Node):
     def _parse_targets(raw_targets) -> List[Tuple[float, float, float]]:
         targets: List[Tuple[float, float, float]] = []
         for target in raw_targets or []:
+            if isinstance(target, str):
+                try:
+                    target = json.loads(target)
+                except json.JSONDecodeError:
+                    continue
             if isinstance(target, Pose):
                 targets.append((target.position.x, target.position.y, target.position.z))
                 continue

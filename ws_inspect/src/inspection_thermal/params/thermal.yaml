@@ -4,21 +4,7 @@ thermal_alarm_node:
     hysteresis: 0.3
     check_rate_hz: 10
     hot_targets:
-      - position:
-          x: 5.5
-          y: 1.2
-          z: 0.0
-        orientation:
-          x: 0.0
-          y: 0.0
-          z: 0.0
-          w: 1.0
-      - position:
-          x: 9.0
-          y: -0.5
-          z: 0.0
-        orientation:
-          x: 0.0
-          y: 0.0
-          z: 0.0
-          w: 1.0
+      - |
+          {"position": {"x": 5.5, "y": 1.2, "z": 0.0}, "orientation": {"x": 0.0, "y": 0.0, "z": 0.0, "w": 1.0}}
+      - |
+          {"position": {"x": 9.0, "y": -0.5, "z": 0.0}, "orientation": {"x": 0.0, "y": 0.0, "z": 0.0, "w": 1.0}}

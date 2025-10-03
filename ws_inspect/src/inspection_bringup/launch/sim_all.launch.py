@@ -13,10 +13,16 @@ from launch_ros.substitutions import FindPackageShare
 LAUNCH_DIR = Path(__file__).resolve().parent
 
 
+def _as_bool(value: str) -> bool:
+    return value.lower() in {"true", "1", "yes", "on"}
+
+
 def _launch_setup(context):
     world = LaunchConfiguration("world").perform(context)
     headless = LaunchConfiguration("headless").perform(context)
-    use_sim_time = LaunchConfiguration("use_sim_time").perform(context)
+    use_sim_time_raw = LaunchConfiguration("use_sim_time").perform(context)
+    use_sim_time_bool = _as_bool(use_sim_time_raw)
+    use_sim_time_arg = "true" if use_sim_time_bool else "false"
 
     world_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(str(LAUNCH_DIR / "sim_world.launch.py")),
@@ -29,7 +35,7 @@ def _launch_setup(context):
     nav2_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(str(LAUNCH_DIR / "sim_nav2.launch.py")),
         launch_arguments={
-            "use_sim_time": use_sim_time,
+            "use_sim_time": use_sim_time_arg,
         }.items(),
     )
 
@@ -47,7 +53,7 @@ def _launch_setup(context):
         name="mission_node",
         output="screen",
         parameters=[
-            {"use_sim_time": use_sim_time},
+            {"use_sim_time": use_sim_time_bool},
             mission_params,
         ],
     )
@@ -58,7 +64,7 @@ def _launch_setup(context):
         name="thermal_alarm_node",
         output="screen",
         parameters=[
-            {"use_sim_time": use_sim_time},
+            {"use_sim_time": use_sim_time_bool},
             thermal_params,
         ],
     )

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from datetime import datetime, timezone
 from typing import Any, Callable, List, Optional
 
@@ -18,10 +19,10 @@ except ModuleNotFoundError:  # pragma: no cover - fallback only exercised in tes
 
     class NavigateToPose:  # type: ignore
         Goal = _NavigateGoal
-from rcl_interfaces.msg import SetParametersResult
+from rcl_interfaces.msg import ParameterDescriptor, ParameterType, SetParametersResult
 from rclpy.action import ActionClient
 from rclpy.node import Node
-from rclpy.parameter import Parameter
+from rclpy.parameter import Parameter, ParameterValue
 from rclpy.qos import QoSHistoryPolicy, QoSProfile, QoSReliabilityPolicy
 from rclpy.task import Future
 from std_msgs.msg import Bool, String
@@ -51,7 +52,11 @@ class MissionNode(Node):
 
         self.declare_parameter("loop", True)
         self.declare_parameter("alarm_stop", True)
-        self.declare_parameter("waypoints", [])
+        self.declare_parameter(
+            "waypoints",
+            ParameterValue(string_array_value=[]),
+            descriptor=ParameterDescriptor(type=ParameterType.PARAMETER_STRING_ARRAY),
+        )
 
         self._loop = bool(self.get_parameter("loop").value)
         self._alarm_stop = bool(self.get_parameter("alarm_stop").value)
@@ -59,7 +64,10 @@ class MissionNode(Node):
         self._waypoints = self._parse_waypoints(self._raw_waypoints)
 
         if action_client_factory is None:
-            action_client_factory = lambda node: ActionClient(node, NavigateToPose, "navigate_to_pose")
+            def _default_action_client(node: Node) -> ActionClient:
+                return ActionClient(node, NavigateToPose, "navigate_to_pose")
+
+            action_client_factory = _default_action_client
         self._action_client = action_client_factory(self)
 
         self._current_index = 0
@@ -204,6 +212,11 @@ class MissionNode(Node):
     def _parse_waypoints(raw_waypoints) -> List[PoseStamped]:
         waypoints: List[PoseStamped] = []
         for entry in raw_waypoints or []:
+            if isinstance(entry, str):
+                try:
+                    entry = json.loads(entry)
+                except json.JSONDecodeError:
+                    continue
             if isinstance(entry, PoseStamped):
                 waypoints.append(entry)
                 continue

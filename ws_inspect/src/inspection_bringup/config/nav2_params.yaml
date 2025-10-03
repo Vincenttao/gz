@@ -52,7 +52,7 @@ controller_server:
     controller_plugins:
       - "FollowPath"
     FollowPath:
-      plugin: "nav2_regulated_pure_pursuit_controller/RegulatedPurePursuitController"
+      plugin: "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController"
       desired_linear_vel: 0.5
       lookahead_dist: 0.8
       max_angular_accel: 1.0
@@ -75,8 +75,8 @@ planner_server:
     planner_plugins:
       - "GridBased"
     GridBased:
-      plugin: "nav2_theta_star_planner/ThetaStar"
-      how_many_corners: 72
+      plugin: "nav2_theta_star_planner::ThetaStarPlanner"
+      how_many_corners: 8
       max_iterations: 20000
       allow_unknown: true
 
@@ -98,11 +98,11 @@ behavior_server:
       - "backup"
       - "drive_on_heading"
     spin:
-      plugin: "nav2_behaviors/Spin"
+      plugin: "nav2_behaviors::Spin"
     backup:
-      plugin: "nav2_behaviors/BackUp"
+      plugin: "nav2_behaviors::BackUp"
     drive_on_heading:
-      plugin: "nav2_behaviors/DriveOnHeading"
+      plugin: "nav2_behaviors::DriveOnHeading"
 
 waypoint_follower:
   ros__parameters:
@@ -189,3 +189,23 @@ velocity_smoother:
     min_velocity: [0.0, 0.0, -1.0]
     max_accel: [0.7, 0.0, 1.0]
     max_decel: [-0.7, 0.0, -1.0]
+
+collision_monitor:
+  ros__parameters:
+    use_sim_time: true
+    base_frame_id: base_link
+    odom_frame_id: odom
+    transform_tolerance: 0.5
+    source_timeout: 0.5
+    slow_down_ratio: 0.5
+    stop_accel_limit: -1.0
+    observation_sources: lidar
+    lidar:
+      type: scan
+      topic: scan
+      observation_persistence: 0.0
+      min_range: 0.05
+      max_range: 12.0
+      clear_after_reading: true
+      slow_down_threshold: 1.0
+      stop_threshold: 0.6

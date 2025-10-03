@@ -1,0 +1,15 @@
+[1.093s] Invoking command in '/home/vincent/gz/ws_inspect/build/inspection_bringup': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/vincent/gz/ws_inspect/build/inspection_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vincent/gz/ws_inspect/install/inspection_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/vincent/gz/ws_inspect/build/inspection_bringup/build --no-deps symlink_data
+[1.417s] running develop
+[1.619s] running egg_info
+[1.644s] writing inspection_bringup.egg-info/PKG-INFO
+[1.645s] writing dependency_links to inspection_bringup.egg-info/dependency_links.txt
+[1.645s] writing requirements to inspection_bringup.egg-info/requires.txt
+[1.646s] writing top-level names to inspection_bringup.egg-info/top_level.txt
+[1.665s] reading manifest file 'inspection_bringup.egg-info/SOURCES.txt'
+[1.666s] writing manifest file 'inspection_bringup.egg-info/SOURCES.txt'
+[1.687s] running build_ext
+[1.711s] Creating /home/vincent/gz/ws_inspect/install/inspection_bringup/lib/python3.12/site-packages/inspection-bringup.egg-link (link to .)
+[1.712s] 
+[1.712s] Installed /home/vincent/gz/ws_inspect/build/inspection_bringup
+[1.713s] running symlink_data
+[1.751s] Invoked command in '/home/vincent/gz/ws_inspect/build/inspection_bringup' returned '0': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/vincent/gz/ws_inspect/build/inspection_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vincent/gz/ws_inspect/install/inspection_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/vincent/gz/ws_inspect/build/inspection_bringup/build --no-deps symlink_data

@@ -34,7 +34,10 @@ bt_navigator:
   ros__parameters:
     use_sim_time: true
     default_bt_xml_filename: "package://nav2_bt_navigator/behavior_trees/navigate_w_replanning_and_recovery.xml"
-    plugin_lib_names: ["nav2_bt_navigator/plugins/navigate_to_pose_action_bt_node", "nav2_bt_navigator/plugins/change_goal_action_bt_node", "nav2_bt_navigator/plugins/follow_path_action_bt_node"]
+    plugin_lib_names:
+      - "nav2_bt_navigator/plugins/navigate_to_pose_action_bt_node"
+      - "nav2_bt_navigator/plugins/change_goal_action_bt_node"
+      - "nav2_bt_navigator/plugins/follow_path_action_bt_node"
 
 controller_server:
   ros__parameters:
@@ -44,8 +47,10 @@ controller_server:
     min_y_velocity_threshold: 0.05
     min_theta_velocity_threshold: 0.05
     progress_checker_plugin: "progress_checker"
-    goal_checker_plugins: ["general_goal_checker"]
-    controller_plugins: ["FollowPath"]
+    goal_checker_plugins:
+      - "general_goal_checker"
+    controller_plugins:
+      - "FollowPath"
     FollowPath:
       plugin: "nav2_regulated_pure_pursuit_controller/RegulatedPurePursuitController"
       desired_linear_vel: 0.5
@@ -67,7 +72,8 @@ controller_server:
 planner_server:
   ros__parameters:
     use_sim_time: true
-    planner_plugins: ["GridBased"]
+    planner_plugins:
+      - "GridBased"
     GridBased:
       plugin: "nav2_theta_star_planner/ThetaStar"
       how_many_corners: 72
@@ -77,7 +83,8 @@ planner_server:
 smoother_server:
   ros__parameters:
     use_sim_time: true
-    smoother_plugins: ["simple_smoother"]
+    smoother_plugins:
+      - "simple_smoother"
     simple_smoother:
       tolerance: 1e-2
       max_its: 10
@@ -86,7 +93,10 @@ smoother_server:
 behavior_server:
   ros__parameters:
     use_sim_time: true
-    behavior_plugins: ["spin", "backup", "drive_on_heading"]
+    behavior_plugins:
+      - "spin"
+      - "backup"
+      - "drive_on_heading"
     spin:
       plugin: "nav2_behaviors/Spin"
     backup:
@@ -97,7 +107,8 @@ behavior_server:
 waypoint_follower:
   ros__parameters:
     use_sim_time: true
-    plugin_lib_names: ["nav2_waypoint_follower::FollowWaypoints"]
+    plugin_lib_names:
+      - "nav2_waypoint_follower::FollowWaypoints"
     goal_goldilocks_distance: 0.5
 
 local_costmap:
@@ -109,11 +120,14 @@ local_costmap:
       update_frequency: 10.0
       publish_frequency: 5.0
       rolling_window: true
-      width: 8.0
-      height: 8.0
+      width: 8
+      height: 8
       resolution: 0.05
-      footprint: [[0.25, 0.2], [-0.25, 0.2], [-0.25, -0.2], [0.25, -0.2]]
-      plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+      footprint: "[[0.25, 0.2], [-0.25, 0.2], [-0.25, -0.2], [0.25, -0.2]]"
+      plugins:
+        - "static_layer"
+        - "obstacle_layer"
+        - "inflation_layer"
       static_layer:
         plugin: "nav2_costmap_2d::StaticLayer"
         map_subscribe_transient_local: true
@@ -141,11 +155,14 @@ global_costmap:
       update_frequency: 2.0
       publish_frequency: 2.0
       rolling_window: false
-      width: 40.0
-      height: 40.0
+      width: 40
+      height: 40
       resolution: 0.1
-      footprint: [[0.25, 0.2], [-0.25, 0.2], [-0.25, -0.2], [0.25, -0.2]]
-      plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+      footprint: "[[0.25, 0.2], [-0.25, 0.2], [-0.25, -0.2], [0.25, -0.2]]"
+      plugins:
+        - "static_layer"
+        - "obstacle_layer"
+        - "inflation_layer"
       static_layer:
         plugin: "nav2_costmap_2d::StaticLayer"
         map_subscribe_transient_local: true

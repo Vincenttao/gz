@@ -1,0 +1,12 @@
+[0.280s] Invoking command in '/home/vincent/gz/ws_inspect/src/inspection_bringup': CONDA_PROMPT_MODIFIER=(ros2) PYTEST_ADDOPTS=--tb=short --junit-xml=/home/vincent/gz/ws_inspect/build/inspection_bringup/pytest.xml --junit-prefix=inspection_bringup -o cache_dir=/home/vincent/gz/ws_inspect/build/inspection_bringup/.pytest_cache PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -m pytest
+[0.717s] [1m============================= test session starts ==============================[0m
+[0.717s] platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+[0.727s] cachedir: /home/vincent/gz/ws_inspect/build/inspection_bringup/.pytest_cache
+[0.727s] rootdir: /home/vincent/gz/ws_inspect/src/inspection_bringup
+[0.727s] plugins: launch-testing-ros-0.26.9, ament-pep257-0.17.3, ament-lint-0.17.3, launch-testing-3.4.6, ament-copyright-0.17.3, ament-xmllint-0.17.3, ament-flake8-0.17.3, colcon-core-0.20.0, cov-4.1.0
+[0.734s] [1mcollecting ... [0m[1m
+[0.734s] collected 0 items                                                              [0m
+[0.736s] 
+[0.736s] - generated xml file: /home/vincent/gz/ws_inspect/build/inspection_bringup/pytest.xml -
+[0.737s] [33m============================ [33mno tests ran[0m[33m in 0.02s[0m[33m =============================[0m
+[0.785s] Invoked command in '/home/vincent/gz/ws_inspect/src/inspection_bringup' returned '5': CONDA_PROMPT_MODIFIER=(ros2) PYTEST_ADDOPTS=--tb=short --junit-xml=/home/vincent/gz/ws_inspect/build/inspection_bringup/pytest.xml --junit-prefix=inspection_bringup -o cache_dir=/home/vincent/gz/ws_inspect/build/inspection_bringup/.pytest_cache PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -m pytest

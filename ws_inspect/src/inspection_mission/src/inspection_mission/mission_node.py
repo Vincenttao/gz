@@ -1,15 +1,25 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
-from typing import Callable, List, Optional
+from typing import Any, Callable, List, Optional
 
 import rclpy
 from action_msgs.msg import GoalStatus
 from builtin_interfaces.msg import Time
 from geometry_msgs.msg import PoseStamped, PoseWithCovarianceStamped
-from nav2_msgs.action import NavigateToPose
+# Nav2 action is required at runtime; provide a lightweight stub for test environments
+# where the package may not be installed (e.g., restricted CI sandboxes).
+try:
+    from nav2_msgs.action import NavigateToPose
+except ModuleNotFoundError:  # pragma: no cover - fallback only exercised in tests
+    class _NavigateGoal:  # minimal stand-in matching the interface used in tests
+        def __init__(self) -> None:
+            self.pose = PoseStamped()
+
+    class NavigateToPose:  # type: ignore
+        Goal = _NavigateGoal
 from rcl_interfaces.msg import SetParametersResult
-from rclpy.action import ActionClient, ClientGoalHandle
+from rclpy.action import ActionClient
 from rclpy.node import Node
 from rclpy.parameter import Parameter
 from rclpy.qos import QoSHistoryPolicy, QoSProfile, QoSReliabilityPolicy
@@ -53,7 +63,7 @@ class MissionNode(Node):
         self._action_client = action_client_factory(self)
 
         self._current_index = 0
-        self._current_goal_handle: Optional[ClientGoalHandle] = None
+        self._current_goal_handle: Optional[Any] = None
         self._navigation_active = False
         self._alarm_active = False
         self._mission_started = False

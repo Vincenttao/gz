@@ -1,0 +1,2 @@
+[console_scripts]
+mission_node = inspection_mission.mission_node:main

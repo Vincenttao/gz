@@ -1,0 +1,8 @@
+CMake Warning:
+  Ignoring extra path from command line:
+
+   "/home/vincent/gz/ws_inspect/src/inspection_mission"
+
+
+CMake Error: The source directory "/home/vincent/gz/ws_inspect/src/inspection_mission" does not appear to contain CMakeLists.txt.
+Specify --help for usage, or press the help button on the CMake GUI.

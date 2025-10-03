@@ -1,0 +1,30 @@
+[1.154s] Invoking command in '/home/vincent/gz/ws_inspect/build/inspection_bringup': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/vincent/gz/ws_inspect/build/inspection_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vincent/gz/ws_inspect/install/inspection_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/vincent/gz/ws_inspect/build/inspection_bringup/build --no-deps symlink_data
+[1.566s] running develop
+[1.764s] running egg_info
+[1.765s] creating inspection_bringup.egg-info
+[1.782s] writing inspection_bringup.egg-info/PKG-INFO
+[1.782s] writing dependency_links to inspection_bringup.egg-info/dependency_links.txt
+[1.783s] writing requirements to inspection_bringup.egg-info/requires.txt
+[1.783s] writing top-level names to inspection_bringup.egg-info/top_level.txt
+[1.783s] writing manifest file 'inspection_bringup.egg-info/SOURCES.txt'
+[1.801s] reading manifest file 'inspection_bringup.egg-info/SOURCES.txt'
+[1.806s] writing manifest file 'inspection_bringup.egg-info/SOURCES.txt'
+[1.822s] running build_ext
+[1.845s] Creating /home/vincent/gz/ws_inspect/install/inspection_bringup/lib/python3.12/site-packages/inspection-bringup.egg-link (link to .)
+[1.845s] 
+[1.845s] Installed /home/vincent/gz/ws_inspect/build/inspection_bringup
+[1.846s] running symlink_data
+[1.846s] creating /home/vincent/gz/ws_inspect/install/inspection_bringup/share/ament_index
+[1.846s] creating /home/vincent/gz/ws_inspect/install/inspection_bringup/share/ament_index/resource_index
+[1.847s] creating /home/vincent/gz/ws_inspect/install/inspection_bringup/share/ament_index/resource_index/packages
+[1.847s] symbolically linking /home/vincent/gz/ws_inspect/build/inspection_bringup/resource/inspection_bringup -> /home/vincent/gz/ws_inspect/install/inspection_bringup/share/ament_index/resource_index/packages
+[1.847s] symbolically linking /home/vincent/gz/ws_inspect/build/inspection_bringup/package.xml -> /home/vincent/gz/ws_inspect/install/inspection_bringup/share/inspection_bringup
+[1.848s] creating /home/vincent/gz/ws_inspect/install/inspection_bringup/share/inspection_bringup/launch
+[1.850s] symbolically linking /home/vincent/gz/ws_inspect/build/inspection_bringup/launch/sim_nav2.launch.py -> /home/vincent/gz/ws_inspect/install/inspection_bringup/share/inspection_bringup/launch
+[1.850s] symbolically linking /home/vincent/gz/ws_inspect/build/inspection_bringup/launch/sim_world.launch.py -> /home/vincent/gz/ws_inspect/install/inspection_bringup/share/inspection_bringup/launch
+[1.850s] symbolically linking /home/vincent/gz/ws_inspect/build/inspection_bringup/launch/sim_all.launch.py -> /home/vincent/gz/ws_inspect/install/inspection_bringup/share/inspection_bringup/launch
+[1.850s] creating /home/vincent/gz/ws_inspect/install/inspection_bringup/share/inspection_bringup/config
+[1.850s] symbolically linking /home/vincent/gz/ws_inspect/build/inspection_bringup/config/costmap_common.yaml -> /home/vincent/gz/ws_inspect/install/inspection_bringup/share/inspection_bringup/config
+[1.850s] symbolically linking /home/vincent/gz/ws_inspect/build/inspection_bringup/config/localization.yaml -> /home/vincent/gz/ws_inspect/install/inspection_bringup/share/inspection_bringup/config
+[1.850s] symbolically linking /home/vincent/gz/ws_inspect/build/inspection_bringup/config/nav2_params.yaml -> /home/vincent/gz/ws_inspect/install/inspection_bringup/share/inspection_bringup/config
+[1.887s] Invoked command in '/home/vincent/gz/ws_inspect/build/inspection_bringup' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/vincent/gz/ws_inspect/build/inspection_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vincent/gz/ws_inspect/install/inspection_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/vincent/gz/ws_inspect/build/inspection_bringup/build --no-deps symlink_data

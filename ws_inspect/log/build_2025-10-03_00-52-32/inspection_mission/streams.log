@@ -1,0 +1,10 @@
+[0.025s] Invoking command in '/home/vincent/gz/ws_inspect/build/inspection_mission': CONDA_PROMPT_MODIFIER=(ros2) /usr/bin/cmake /home/vincent/gz/ws_inspect/src/inspection_mission -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/vincent/gz/ws_inspect/install/inspection_mission
+[0.085s] CMake Warning:
+[0.086s]   Ignoring extra path from command line:
+[0.086s] 
+[0.086s]    "/home/vincent/gz/ws_inspect/src/inspection_mission"
+[0.086s] 
+[0.086s] 
+[0.087s] CMake Error: The source directory "/home/vincent/gz/ws_inspect/src/inspection_mission" does not appear to contain CMakeLists.txt.
+[0.087s] Specify --help for usage, or press the help button on the CMake GUI.
+[0.093s] Invoked command in '/home/vincent/gz/ws_inspect/build/inspection_mission' returned '1': CONDA_PROMPT_MODIFIER=(ros2) /usr/bin/cmake /home/vincent/gz/ws_inspect/src/inspection_mission -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/vincent/gz/ws_inspect/install/inspection_mission

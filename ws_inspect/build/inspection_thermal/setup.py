@@ -1,0 +1,1 @@
+/home/vincent/gz/ws_inspect/src/inspection_thermal/setup.py

@@ -1,0 +1,314 @@
+[0.107s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.107s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=2, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x724a3ff85a90>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x724a40027830>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x724a40027830>>, mixin_verb=('build',))
+[0.135s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.135s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.135s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.135s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.135s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.136s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/vincent/gz/ws_inspect'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup) by extensions ['ros']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup) by extension 'ros'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup) by extensions ['cmake', 'python']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup) by extension 'cmake'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup) by extension 'python'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup) by extensions ['python_setup_py']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup) by extension 'python_setup_py'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/config) by extensions ['ignore', 'ignore_ament_install']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/config) by extension 'ignore'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/config) by extension 'ignore_ament_install'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/config) by extensions ['colcon_pkg']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/config) by extension 'colcon_pkg'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/config) by extensions ['colcon_meta']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/config) by extension 'colcon_meta'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/config) by extensions ['ros']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/config) by extension 'ros'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/config) by extensions ['cmake', 'python']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/config) by extension 'cmake'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/config) by extension 'python'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/config) by extensions ['python_setup_py']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/config) by extension 'python_setup_py'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/launch) by extensions ['ignore', 'ignore_ament_install']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/launch) by extension 'ignore'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/launch) by extension 'ignore_ament_install'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/launch) by extensions ['colcon_pkg']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/launch) by extension 'colcon_pkg'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/launch) by extensions ['colcon_meta']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/launch) by extension 'colcon_meta'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/launch) by extensions ['ros']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/launch) by extension 'ros'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/launch) by extensions ['cmake', 'python']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/launch) by extension 'cmake'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/launch) by extension 'python'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/launch) by extensions ['python_setup_py']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_bringup/launch) by extension 'python_setup_py'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_mission) by extensions ['ignore', 'ignore_ament_install']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_mission) by extension 'ignore'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_mission) by extension 'ignore_ament_install'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_mission) by extensions ['colcon_pkg']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_mission) by extension 'colcon_pkg'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_mission) by extensions ['colcon_meta']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_mission) by extension 'colcon_meta'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_mission) by extensions ['ros']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_mission) by extension 'ros'
+[0.158s] DEBUG:colcon.colcon_core.package_identification:Package 'src/inspection_mission' with type 'ros.ament_python' and name 'inspection_mission'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_thermal) by extensions ['ignore', 'ignore_ament_install']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_thermal) by extension 'ignore'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_thermal) by extension 'ignore_ament_install'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_thermal) by extensions ['colcon_pkg']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_thermal) by extension 'colcon_pkg'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_thermal) by extensions ['colcon_meta']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_thermal) by extension 'colcon_meta'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_thermal) by extensions ['ros']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/inspection_thermal) by extension 'ros'
+[0.159s] DEBUG:colcon.colcon_core.package_identification:Package 'src/inspection_thermal' with type 'ros.ament_python' and name 'inspection_thermal'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets) by extensions ['ignore', 'ignore_ament_install']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets) by extension 'ignore'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets) by extension 'ignore_ament_install'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets) by extensions ['colcon_pkg']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets) by extension 'colcon_pkg'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets) by extensions ['colcon_meta']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets) by extension 'colcon_meta'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets) by extensions ['ros']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets) by extension 'ros'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets) by extensions ['cmake', 'python']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets) by extension 'cmake'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets) by extension 'python'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets) by extensions ['python_setup_py']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets) by extension 'python_setup_py'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models) by extensions ['ignore', 'ignore_ament_install']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models) by extension 'ignore'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models) by extension 'ignore_ament_install'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models) by extensions ['colcon_pkg']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models) by extension 'colcon_pkg'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models) by extensions ['colcon_meta']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models) by extension 'colcon_meta'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models) by extensions ['ros']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models) by extension 'ros'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models) by extensions ['cmake', 'python']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models) by extension 'cmake'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models) by extension 'python'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models) by extensions ['python_setup_py']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models) by extension 'python_setup_py'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/hot_target) by extensions ['ignore', 'ignore_ament_install']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/hot_target) by extension 'ignore'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/hot_target) by extension 'ignore_ament_install'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/hot_target) by extensions ['colcon_pkg']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/hot_target) by extension 'colcon_pkg'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/hot_target) by extensions ['colcon_meta']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/hot_target) by extension 'colcon_meta'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/hot_target) by extensions ['ros']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/hot_target) by extension 'ros'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/hot_target) by extensions ['cmake', 'python']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/hot_target) by extension 'cmake'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/hot_target) by extension 'python'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/hot_target) by extensions ['python_setup_py']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/hot_target) by extension 'python_setup_py'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/ped_actor) by extensions ['ignore', 'ignore_ament_install']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/ped_actor) by extension 'ignore'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/ped_actor) by extension 'ignore_ament_install'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/ped_actor) by extensions ['colcon_pkg']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/ped_actor) by extension 'colcon_pkg'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/ped_actor) by extensions ['colcon_meta']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/ped_actor) by extension 'colcon_meta'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/ped_actor) by extensions ['ros']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/ped_actor) by extension 'ros'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/ped_actor) by extensions ['cmake', 'python']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/ped_actor) by extension 'cmake'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/ped_actor) by extension 'python'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/ped_actor) by extensions ['python_setup_py']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/models/ped_actor) by extension 'python_setup_py'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/worlds) by extensions ['ignore', 'ignore_ament_install']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/worlds) by extension 'ignore'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/worlds) by extension 'ignore_ament_install'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/worlds) by extensions ['colcon_pkg']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/worlds) by extension 'colcon_pkg'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/worlds) by extensions ['colcon_meta']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/worlds) by extension 'colcon_meta'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/worlds) by extensions ['ros']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/worlds) by extension 'ros'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/worlds) by extensions ['cmake', 'python']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/worlds) by extension 'cmake'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/worlds) by extension 'python'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/worlds) by extensions ['python_setup_py']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/sim_world_assets/worlds) by extension 'python_setup_py'
+[0.162s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.162s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.162s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.162s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.162s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.175s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.175s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.177s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 315 installed packages in /opt/ros/jazzy
+[0.178s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_mission' build argument 'cmake_args' from command line to 'None'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_mission' build argument 'cmake_target' from command line to 'None'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_mission' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_mission' build argument 'cmake_clean_cache' from command line to 'False'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_mission' build argument 'cmake_clean_first' from command line to 'False'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_mission' build argument 'cmake_force_configure' from command line to 'False'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_mission' build argument 'ament_cmake_args' from command line to 'None'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_mission' build argument 'catkin_cmake_args' from command line to 'None'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_mission' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.215s] DEBUG:colcon.colcon_core.verb:Building package 'inspection_mission' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/vincent/gz/ws_inspect/build/inspection_mission', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/vincent/gz/ws_inspect/install/inspection_mission', 'merge_install': False, 'path': '/home/vincent/gz/ws_inspect/src/inspection_mission', 'symlink_install': True, 'test_result_base': None}
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_thermal' build argument 'cmake_args' from command line to 'None'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_thermal' build argument 'cmake_target' from command line to 'None'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_thermal' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_thermal' build argument 'cmake_clean_cache' from command line to 'False'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_thermal' build argument 'cmake_clean_first' from command line to 'False'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_thermal' build argument 'cmake_force_configure' from command line to 'False'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_thermal' build argument 'ament_cmake_args' from command line to 'None'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_thermal' build argument 'catkin_cmake_args' from command line to 'None'
+[0.215s] Level 5:colcon.colcon_core.verb:set package 'inspection_thermal' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.215s] DEBUG:colcon.colcon_core.verb:Building package 'inspection_thermal' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/vincent/gz/ws_inspect/build/inspection_thermal', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/vincent/gz/ws_inspect/install/inspection_thermal', 'merge_install': False, 'path': '/home/vincent/gz/ws_inspect/src/inspection_thermal', 'symlink_install': True, 'test_result_base': None}
+[0.215s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.216s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.216s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/vincent/gz/ws_inspect/src/inspection_mission' with build type 'ament_python'
+[0.216s] Level 1:colcon.colcon_core.shell:create_environment_hook('inspection_mission', 'ament_prefix_path')
+[0.217s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.218s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/hook/ament_prefix_path.ps1'
+[0.218s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/hook/ament_prefix_path.dsv'
+[0.218s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/hook/ament_prefix_path.sh'
+[0.219s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.219s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.221s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/vincent/gz/ws_inspect/src/inspection_thermal' with build type 'ament_python'
+[0.221s] Level 1:colcon.colcon_core.shell:create_environment_hook('inspection_thermal', 'ament_prefix_path')
+[0.221s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/hook/ament_prefix_path.ps1'
+[0.221s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/hook/ament_prefix_path.dsv'
+[0.222s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/hook/ament_prefix_path.sh'
+[0.222s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.222s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.371s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/vincent/gz/ws_inspect/src/inspection_mission'
+[0.371s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.371s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.525s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/vincent/gz/ws_inspect/src/inspection_thermal'
+[0.525s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.525s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.043s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/vincent/gz/ws_inspect/build/inspection_mission': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/vincent/gz/ws_inspect/build/inspection_mission/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vincent/gz/ws_inspect/install/inspection_mission/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/vincent/gz/ws_inspect/build/inspection_mission/build --no-deps symlink_data
+[1.056s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/vincent/gz/ws_inspect/build/inspection_thermal': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/vincent/gz/ws_inspect/build/inspection_thermal/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vincent/gz/ws_inspect/install/inspection_thermal/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/vincent/gz/ws_inspect/build/inspection_thermal/build --no-deps symlink_data
+[1.618s] Level 1:colcon.colcon_core.shell:create_environment_hook('inspection_mission', 'pythonpath_develop')
+[1.619s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/build/inspection_mission/src/share/inspection_mission/hook/pythonpath_develop.ps1'
+[1.619s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/vincent/gz/ws_inspect/build/inspection_mission' returned '0': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/vincent/gz/ws_inspect/build/inspection_mission/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vincent/gz/ws_inspect/install/inspection_mission/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/vincent/gz/ws_inspect/build/inspection_mission/build --no-deps symlink_data
+[1.620s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/vincent/gz/ws_inspect/build/inspection_mission/src/share/inspection_mission/hook/pythonpath_develop.dsv'
+[1.621s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/build/inspection_mission/src/share/inspection_mission/hook/pythonpath_develop.sh'
+[1.623s] Level 1:colcon.colcon_core.environment:checking '/home/vincent/gz/ws_inspect/install/inspection_mission' for CMake module files
+[1.623s] Level 1:colcon.colcon_core.environment:checking '/home/vincent/gz/ws_inspect/install/inspection_mission' for CMake config files
+[1.624s] Level 1:colcon.colcon_core.environment:checking '/home/vincent/gz/ws_inspect/install/inspection_mission/lib'
+[1.624s] Level 1:colcon.colcon_core.environment:checking '/home/vincent/gz/ws_inspect/install/inspection_mission/bin'
+[1.624s] Level 1:colcon.colcon_core.shell:create_environment_hook('inspection_mission', 'path')
+[1.624s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/hook/path.ps1'
+[1.624s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/hook/path.dsv'
+[1.625s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/hook/path.sh'
+[1.625s] Level 1:colcon.colcon_core.environment:checking '/home/vincent/gz/ws_inspect/install/inspection_mission/lib/pkgconfig/inspection_mission.pc'
+[1.626s] Level 1:colcon.colcon_core.environment:checking '/home/vincent/gz/ws_inspect/install/inspection_mission/lib/python3.12/site-packages'
+[1.626s] Level 1:colcon.colcon_core.shell:create_environment_hook('inspection_mission', 'pythonpath')
+[1.626s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/hook/pythonpath.ps1'
+[1.626s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/hook/pythonpath.dsv'
+[1.627s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/hook/pythonpath.sh'
+[1.627s] Level 1:colcon.colcon_core.environment:checking '/home/vincent/gz/ws_inspect/install/inspection_mission/bin'
+[1.627s] Level 1:colcon.colcon_core.shell:create_environment_hook('inspection_mission', 'pythonscriptspath')
+[1.627s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/hook/pythonscriptspath.ps1'
+[1.628s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/hook/pythonscriptspath.dsv'
+[1.628s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/hook/pythonscriptspath.sh'
+[1.628s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(inspection_mission)
+[1.628s] INFO:colcon.colcon_core.shell:Creating package script '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/package.ps1'
+[1.629s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/package.dsv'
+[1.629s] INFO:colcon.colcon_core.shell:Creating package script '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/package.sh'
+[1.630s] INFO:colcon.colcon_core.shell:Creating package script '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/package.bash'
+[1.630s] INFO:colcon.colcon_core.shell:Creating package script '/home/vincent/gz/ws_inspect/install/inspection_mission/share/inspection_mission/package.zsh'
+[1.631s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/vincent/gz/ws_inspect/install/inspection_mission/share/colcon-core/packages/inspection_mission)
+[1.637s] Level 1:colcon.colcon_core.shell:create_environment_hook('inspection_thermal', 'pythonpath_develop')
+[1.637s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/build/inspection_thermal/src/share/inspection_thermal/hook/pythonpath_develop.ps1'
+[1.637s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/vincent/gz/ws_inspect/build/inspection_thermal' returned '0': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/vincent/gz/ws_inspect/build/inspection_thermal/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vincent/gz/ws_inspect/install/inspection_thermal/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/vincent/gz/ws_inspect/build/inspection_thermal/build --no-deps symlink_data
+[1.638s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/vincent/gz/ws_inspect/build/inspection_thermal/src/share/inspection_thermal/hook/pythonpath_develop.dsv'
+[1.639s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/build/inspection_thermal/src/share/inspection_thermal/hook/pythonpath_develop.sh'
+[1.639s] Level 1:colcon.colcon_core.environment:checking '/home/vincent/gz/ws_inspect/install/inspection_thermal' for CMake module files
+[1.640s] Level 1:colcon.colcon_core.environment:checking '/home/vincent/gz/ws_inspect/install/inspection_thermal' for CMake config files
+[1.640s] Level 1:colcon.colcon_core.environment:checking '/home/vincent/gz/ws_inspect/install/inspection_thermal/lib'
+[1.640s] Level 1:colcon.colcon_core.environment:checking '/home/vincent/gz/ws_inspect/install/inspection_thermal/bin'
+[1.640s] Level 1:colcon.colcon_core.shell:create_environment_hook('inspection_thermal', 'path')
+[1.640s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/hook/path.ps1'
+[1.640s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/hook/path.dsv'
+[1.641s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/hook/path.sh'
+[1.641s] Level 1:colcon.colcon_core.environment:checking '/home/vincent/gz/ws_inspect/install/inspection_thermal/lib/pkgconfig/inspection_thermal.pc'
+[1.641s] Level 1:colcon.colcon_core.environment:checking '/home/vincent/gz/ws_inspect/install/inspection_thermal/lib/python3.12/site-packages'
+[1.641s] Level 1:colcon.colcon_core.shell:create_environment_hook('inspection_thermal', 'pythonpath')
+[1.641s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/hook/pythonpath.ps1'
+[1.642s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/hook/pythonpath.dsv'
+[1.643s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/hook/pythonpath.sh'
+[1.643s] Level 1:colcon.colcon_core.environment:checking '/home/vincent/gz/ws_inspect/install/inspection_thermal/bin'
+[1.643s] Level 1:colcon.colcon_core.shell:create_environment_hook('inspection_thermal', 'pythonscriptspath')
+[1.643s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/hook/pythonscriptspath.ps1'
+[1.644s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/hook/pythonscriptspath.dsv'
+[1.644s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/hook/pythonscriptspath.sh'
+[1.644s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(inspection_thermal)
+[1.644s] INFO:colcon.colcon_core.shell:Creating package script '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/package.ps1'
+[1.645s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/package.dsv'
+[1.645s] INFO:colcon.colcon_core.shell:Creating package script '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/package.sh'
+[1.646s] INFO:colcon.colcon_core.shell:Creating package script '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/package.bash'
+[1.646s] INFO:colcon.colcon_core.shell:Creating package script '/home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal/package.zsh'
+[1.646s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/vincent/gz/ws_inspect/install/inspection_thermal/share/colcon-core/packages/inspection_thermal)
+[1.647s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.647s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.647s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.647s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.673s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[1.673s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.673s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.673s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.673s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.AccessDenied: Failed to connect to socket /run/user/1000/bus: Operation not permitted
+[1.673s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.673s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/vincent/gz/ws_inspect/install/local_setup.ps1'
+[1.674s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/vincent/gz/ws_inspect/install/_local_setup_util_ps1.py'
+[1.675s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/vincent/gz/ws_inspect/install/setup.ps1'
+[1.676s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/vincent/gz/ws_inspect/install/local_setup.sh'
+[1.676s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/vincent/gz/ws_inspect/install/_local_setup_util_sh.py'
+[1.676s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/vincent/gz/ws_inspect/install/setup.sh'
+[1.677s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/vincent/gz/ws_inspect/install/local_setup.bash'
+[1.677s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/vincent/gz/ws_inspect/install/setup.bash'
+[1.678s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/vincent/gz/ws_inspect/install/local_setup.zsh'
+[1.678s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/vincent/gz/ws_inspect/install/setup.zsh'

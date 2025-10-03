@@ -1,0 +1,41 @@
+[0.216s] Invoking command in '/home/vincent/gz/ws_inspect/src/inspection_thermal': AMENT_PREFIX_PATH=/home/vincent/gz/ws_inspect/install/inspection_thermal:${AMENT_PREFIX_PATH} CONDA_PROMPT_MODIFIER=(ros2) PATH=/home/vincent/gz/ws_inspect/install/inspection_thermal/bin:${PATH} PYTEST_ADDOPTS=--tb=short --junit-xml=/home/vincent/gz/ws_inspect/build/inspection_thermal/pytest.xml --junit-prefix=inspection_thermal -o cache_dir=/home/vincent/gz/ws_inspect/build/inspection_thermal/.pytest_cache PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/home/vincent/gz/ws_inspect/build/inspection_thermal/src:/home/vincent/gz/ws_inspect/install/inspection_thermal/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -m pytest
+[0.887s] ============================= test session starts ==============================
+[0.887s] platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+[0.887s] cachedir: /home/vincent/gz/ws_inspect/build/inspection_thermal/.pytest_cache
+[0.887s] rootdir: /home/vincent/gz/ws_inspect/src/inspection_thermal
+[0.887s] plugins: launch-testing-ros-0.26.9, ament-pep257-0.17.3, ament-lint-0.17.3, launch-testing-3.4.6, ament-copyright-0.17.3, ament-xmllint-0.17.3, ament-flake8-0.17.3, colcon-core-0.20.0, cov-4.1.0
+[0.887s] collected 1 item
+[0.887s] 
+[0.951s] =============================== warnings summary ===============================
+[0.951s] tests/test_thermal_alarm.py::test_alarm_engages_and_clears
+[0.951s]   Warning: Failed to fini rosout publisher: rcl node implementation is invalid, at ./src/rcl/node.c:390
+[0.952s] 
+[0.952s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[0.957s] tests/test_thermal_alarm.py F                                            [100%]
+[0.957s] 
+[0.957s] =================================== FAILURES ===================================
+[0.957s] ________________________ test_alarm_engages_and_clears _________________________
+[0.957s] tests/test_thermal_alarm.py:26: in test_alarm_engages_and_clears
+[0.957s]     node = ThermalAlarmNode(pose_provider=provider)
+[0.957s] src/inspection_thermal/thermal_alarm_node.py:31: in __init__
+[0.957s]     super().__init__("thermal_alarm_node")
+[0.957s] /opt/ros/jazzy/lib/python3.12/site-packages/rclpy/node.py:187: in __init__
+[0.957s]     self.__node = _rclpy.Node(
+[0.957s] E   rclpy._rclpy_pybind11.RCLError: error creating node: __create_participant failed to create participant, at ./src/participant.cpp:107, at ./src/rcl/node.c:252
+[0.957s] ----------------------------- Captured stdout call -----------------------------
+[0.957s] [37;1m2025-10-03 00:59:57.047 [31;1m[[37;1mRTPS_TRANSPORT_SHM[31;1m Error] [37mFailed to create segment eb50e6d53651412c: Permission denied[34;1m -> Function [36mcompute_per_allocation_extra_size[m
+[0.957s] [37;1m2025-10-03 00:59:57.047 [31;1m[[37;1mRTPS_TRANSPORT_SHM[31;1m Error] [37mFailed to create Shared Memory Manager for domain fastrtps: Permission denied[34;1m -> Function [36mcreate[m
+[0.957s] [37;1m2025-10-03 00:59:57.048 [31;1m[[37;1mRTPS_PARTICIPANT[31;1m Error] [37mUnable to Register SHM Transport. SHM Transport is not supported in the current platform.[34;1m -> Function [36mRTPSParticipantImpl[m
+[0.957s] [37;1m2025-10-03 00:59:57.048 [31;1m[[37;1mTRANSPORT_UDP[31;1m Error] [37mError creating socket: Operation not permitted[34;1m -> Function [36minit[m
+[0.957s] [37;1m2025-10-03 00:59:57.048 [31;1m[[37;1mRTPS_PARTICIPANT[31;1m Error] [37mUser transport failed to register.[34;1m -> Function [36mRTPSParticipantImpl[m
+[0.958s] [37;1m2025-10-03 00:59:57.048 [31;1m[[37;1mRTPS_PARTICIPANT[31;1m Error] [37mCannot create participant due to initialization error[34;1m -> Function [36mcreateParticipant[m
+[0.958s] [37;1m2025-10-03 00:59:57.049 [31;1m[[37;1mDOMAIN_PARTICIPANT[31;1m Error] [37mProblem creating RTPSParticipant[34;1m -> Function [36menable[m
+[0.958s] ----------------------------- Captured stderr call -----------------------------
+[0.958s] getifaddrs: Operation not permitted
+[0.958s] getifaddrs: Operation not permitted
+[0.958s] getifaddrs: Operation not permitted
+[0.958s] - generated xml file: /home/vincent/gz/ws_inspect/build/inspection_thermal/pytest.xml -
+[0.958s] =========================== short test summary info ============================
+[0.958s] FAILED tests/test_thermal_alarm.py::test_alarm_engages_and_clears - rclpy._rc...
+[0.958s] ========================= 1 failed, 1 warning in 0.46s =========================
+[1.130s] Invoked command in '/home/vincent/gz/ws_inspect/src/inspection_thermal' returned '1': AMENT_PREFIX_PATH=/home/vincent/gz/ws_inspect/install/inspection_thermal:${AMENT_PREFIX_PATH} CONDA_PROMPT_MODIFIER=(ros2) PATH=/home/vincent/gz/ws_inspect/install/inspection_thermal/bin:${PATH} PYTEST_ADDOPTS=--tb=short --junit-xml=/home/vincent/gz/ws_inspect/build/inspection_thermal/pytest.xml --junit-prefix=inspection_thermal -o cache_dir=/home/vincent/gz/ws_inspect/build/inspection_thermal/.pytest_cache PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/home/vincent/gz/ws_inspect/build/inspection_thermal/src:/home/vincent/gz/ws_inspect/install/inspection_thermal/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -m pytest

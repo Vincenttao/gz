@@ -1,0 +1,19 @@
+[0.219s] Invoking command in '/home/vincent/gz/ws_inspect/src/inspection_mission': AMENT_PREFIX_PATH=/home/vincent/gz/ws_inspect/install/inspection_mission:${AMENT_PREFIX_PATH} CONDA_PROMPT_MODIFIER=(ros2) PATH=/home/vincent/gz/ws_inspect/install/inspection_mission/bin:${PATH} PYTEST_ADDOPTS=--tb=short --junit-xml=/home/vincent/gz/ws_inspect/build/inspection_mission/pytest.xml --junit-prefix=inspection_mission -o cache_dir=/home/vincent/gz/ws_inspect/build/inspection_mission/.pytest_cache PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/home/vincent/gz/ws_inspect/build/inspection_mission/src:/home/vincent/gz/ws_inspect/install/inspection_mission/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -m pytest
+[0.780s] ============================= test session starts ==============================
+[0.780s] platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+[0.780s] cachedir: /home/vincent/gz/ws_inspect/build/inspection_mission/.pytest_cache
+[0.780s] rootdir: /home/vincent/gz/ws_inspect/src/inspection_mission
+[0.780s] plugins: launch-testing-ros-0.26.9, ament-pep257-0.17.3, ament-lint-0.17.3, launch-testing-3.4.6, ament-copyright-0.17.3, ament-xmllint-0.17.3, ament-flake8-0.17.3, colcon-core-0.20.0, cov-4.1.0
+[0.780s] collected 2 items
+[0.780s] 
+[0.791s] 
+[0.792s] =============================== warnings summary ===============================
+[0.792s] tests/test_mission_node.py::test_waypoint_sequence_advances_and_completes
+[0.792s] tests/test_mission_node.py::test_alarm_triggers_cancel_when_requested
+[0.792s]   Warning: Failed to fini rosout publisher: rcl node implementation is invalid, at ./src/rcl/node.c:390
+[0.792s] 
+[0.793s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[0.796s] tests/test_mission_node.py ss                                            [100%]
+[0.796s] - generated xml file: /home/vincent/gz/ws_inspect/build/inspection_mission/pytest.xml -
+[0.796s] ======================== 2 skipped, 2 warnings in 0.29s ========================
+[0.974s] Invoked command in '/home/vincent/gz/ws_inspect/src/inspection_mission' returned '0': AMENT_PREFIX_PATH=/home/vincent/gz/ws_inspect/install/inspection_mission:${AMENT_PREFIX_PATH} CONDA_PROMPT_MODIFIER=(ros2) PATH=/home/vincent/gz/ws_inspect/install/inspection_mission/bin:${PATH} PYTEST_ADDOPTS=--tb=short --junit-xml=/home/vincent/gz/ws_inspect/build/inspection_mission/pytest.xml --junit-prefix=inspection_mission -o cache_dir=/home/vincent/gz/ws_inspect/build/inspection_mission/.pytest_cache PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/home/vincent/gz/ws_inspect/build/inspection_mission/src:/home/vincent/gz/ws_inspect/install/inspection_mission/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -m pytest

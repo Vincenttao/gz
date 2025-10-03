@@ -1,0 +1,16 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+cachedir: /home/vincent/gz/ws_inspect/build/inspection_thermal/.pytest_cache
+rootdir: /home/vincent/gz/ws_inspect/src/inspection_thermal
+plugins: launch-testing-ros-0.26.9, ament-pep257-0.17.3, ament-lint-0.17.3, launch-testing-3.4.6, ament-copyright-0.17.3, ament-xmllint-0.17.3, ament-flake8-0.17.3, colcon-core-0.20.0, cov-4.1.0
+collected 1 item
+
+
+=============================== warnings summary ===============================
+tests/test_thermal_alarm.py::test_alarm_engages_and_clears
+  Warning: Failed to fini rosout publisher: rcl node implementation is invalid, at ./src/rcl/node.c:390
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+tests/test_thermal_alarm.py s                                            [100%]
+- generated xml file: /home/vincent/gz/ws_inspect/build/inspection_thermal/pytest.xml -
+======================== 1 skipped, 1 warning in 0.34s =========================

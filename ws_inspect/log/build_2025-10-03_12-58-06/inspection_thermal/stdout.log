@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing src/inspection_thermal.egg-info/PKG-INFO
+writing dependency_links to src/inspection_thermal.egg-info/dependency_links.txt
+writing entry points to src/inspection_thermal.egg-info/entry_points.txt
+writing requirements to src/inspection_thermal.egg-info/requires.txt
+writing top-level names to src/inspection_thermal.egg-info/top_level.txt
+reading manifest file 'src/inspection_thermal.egg-info/SOURCES.txt'
+writing manifest file 'src/inspection_thermal.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/vincent/gz/ws_inspect/install/inspection_thermal/lib/python3.12/site-packages/inspection-thermal.egg-link (link to src)
+Installing thermal_alarm_node script to /home/vincent/gz/ws_inspect/install/inspection_thermal/bin
+
+Installed /home/vincent/gz/ws_inspect/build/inspection_thermal/src
+running symlink_data
+creating /home/vincent/gz/ws_inspect/install/inspection_thermal/lib/inspection_thermal
+symbolically linking /home/vincent/gz/ws_inspect/build/inspection_thermal/scripts/thermal_alarm_node -> /home/vincent/gz/ws_inspect/install/inspection_thermal/lib/inspection_thermal

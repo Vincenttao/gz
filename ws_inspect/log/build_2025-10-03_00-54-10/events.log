@@ -1,0 +1,17 @@
+[0.000000] (-) TimerEvent: {}
+[0.001046] (inspection_mission) JobQueued: {'identifier': 'inspection_mission', 'dependencies': OrderedDict()}
+[0.001145] (inspection_thermal) JobQueued: {'identifier': 'inspection_thermal', 'dependencies': OrderedDict()}
+[0.001203] (inspection_mission) JobStarted: {'identifier': 'inspection_mission'}
+[0.008004] (inspection_thermal) JobStarted: {'identifier': 'inspection_thermal'}
+[0.100107] (-) TimerEvent: {}
+[0.200275] (-) TimerEvent: {}
+[0.300466] (-) TimerEvent: {}
+[0.400661] (-) TimerEvent: {}
+[0.500790] (-) TimerEvent: {}
+[0.605135] (-) TimerEvent: {}
+[0.705296] (-) TimerEvent: {}
+[0.805432] (-) TimerEvent: {}
+[0.854687] (inspection_thermal) StderrLine: {'line': b'Traceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_core/executor/__init__.py", line 91, in __call__\n    rc = await self.task(*args, **kwargs)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/usr/lib/python3/dist-packages/colcon_core/task/__init__.py", line 93, in __call__\n    return await task_method(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/usr/lib/python3/dist-packages/colcon_ros/task/ament_python/build.py", line 102, in build\n    return await extension.build(additional_hooks=additional_hooks)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/build.py", line 145, in build\n    temp_symlinks = self._symlinks_in_build(args, setup_py_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/build.py", line 319, in _symlinks_in_build\n    raise RuntimeError(\nRuntimeError: Provided py_modules \'thermal_alarm_node.py\' does not exist\n'}
+[0.855989] (inspection_thermal) JobEnded: {'identifier': 'inspection_thermal', 'rc': 1}
+[0.863672] (inspection_mission) JobEnded: {'identifier': 'inspection_mission', 'rc': 'SIGINT'}
+[0.874164] (-) EventReactorShutdown: {}

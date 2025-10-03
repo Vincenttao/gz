@@ -5,8 +5,9 @@ from pathlib import Path
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
+from launch_ros.substitutions import FindPackageShare
 
 
 LAUNCH_DIR = Path(__file__).resolve().parent
@@ -32,6 +33,14 @@ def _launch_setup(context):
         }.items(),
     )
 
+    mission_params = PathJoinSubstitution(
+        [FindPackageShare("inspection_mission"), "params", "mission.yaml"]
+    )
+
+    thermal_params = PathJoinSubstitution(
+        [FindPackageShare("inspection_thermal"), "params", "thermal.yaml"]
+    )
+
     mission_node = Node(
         package="inspection_mission",
         executable="mission_node",
@@ -39,26 +48,7 @@ def _launch_setup(context):
         output="screen",
         parameters=[
             {"use_sim_time": use_sim_time},
-            {
-                "loop": True,
-                "alarm_stop": True,
-                "waypoints": [
-                    {
-                        "header": {"frame_id": "map"},
-                        "pose": {
-                            "position": {"x": 2.0, "y": 0.0, "z": 0.0},
-                            "orientation": {"x": 0.0, "y": 0.0, "z": 0.0, "w": 1.0},
-                        },
-                    },
-                    {
-                        "header": {"frame_id": "map"},
-                        "pose": {
-                            "position": {"x": 6.0, "y": 1.5, "z": 0.0},
-                            "orientation": {"x": 0.0, "y": 0.0, "z": 0.7071, "w": 0.7071},
-                        },
-                    },
-                ],
-            },
+            mission_params,
         ],
     )
 
@@ -69,21 +59,7 @@ def _launch_setup(context):
         output="screen",
         parameters=[
             {"use_sim_time": use_sim_time},
-            {
-                "trigger_distance": 2.0,
-                "hysteresis": 0.3,
-                "check_rate_hz": 10,
-                "hot_targets": [
-                    {
-                        "position": {"x": 5.5, "y": 1.2, "z": 0.0},
-                        "orientation": {"x": 0.0, "y": 0.0, "z": 0.0, "w": 1.0},
-                    },
-                    {
-                        "position": {"x": 9.0, "y": -0.5, "z": 0.0},
-                        "orientation": {"x": 0.0, "y": 0.0, "z": 0.0, "w": 1.0},
-                    },
-                ],
-            },
+            thermal_params,
         ],
     )
 

@@ -5,11 +5,13 @@ package_name = "inspection_thermal"
 setup(
     name=package_name,
     version="0.1.0",
-    packages=[],
-    py_modules=["thermal_alarm_node"],
+    packages=[package_name],
+    package_dir={"": "src"},
     data_files=[
         ("share/ament_index/resource_index/packages", [f"resource/{package_name}"]),
         (f"share/{package_name}", ["package.xml"]),
+        (f"share/{package_name}/params", ["params/thermal.yaml"]),
+        (f"lib/{package_name}", ["scripts/thermal_alarm_node"]),
     ],
     install_requires=["setuptools"],
     zip_safe=True,
@@ -20,7 +22,7 @@ setup(
     tests_require=["pytest"],
     entry_points={
         "console_scripts": [
-            "thermal_alarm_node = thermal_alarm_node:main",
+            "thermal_alarm_node = inspection_thermal.thermal_alarm_node:main",
         ],
     },
 )

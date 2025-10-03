@@ -1,0 +1,1 @@
+Invoking command in '/home/vincent/gz/ws_inspect/build/inspection_thermal': CONDA_PROMPT_MODIFIER=(ros2) /usr/bin/cmake /home/vincent/gz/ws_inspect/src/inspection_thermal -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/vincent/gz/ws_inspect/install/inspection_thermal

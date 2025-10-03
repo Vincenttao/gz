@@ -1,0 +1,24 @@
+[0.834s] Invoking command in '/home/vincent/gz/ws_inspect/build/inspection_thermal': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/vincent/gz/ws_inspect/build/inspection_thermal/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vincent/gz/ws_inspect/install/inspection_thermal/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/vincent/gz/ws_inspect/build/inspection_thermal/build --no-deps symlink_data
+[1.123s] running develop
+[1.299s] running egg_info
+[1.300s] creating src/inspection_thermal.egg-info
+[1.315s] writing src/inspection_thermal.egg-info/PKG-INFO
+[1.316s] writing dependency_links to src/inspection_thermal.egg-info/dependency_links.txt
+[1.316s] writing entry points to src/inspection_thermal.egg-info/entry_points.txt
+[1.317s] writing requirements to src/inspection_thermal.egg-info/requires.txt
+[1.317s] writing top-level names to src/inspection_thermal.egg-info/top_level.txt
+[1.317s] writing manifest file 'src/inspection_thermal.egg-info/SOURCES.txt'
+[1.355s] reading manifest file 'src/inspection_thermal.egg-info/SOURCES.txt'
+[1.355s] writing manifest file 'src/inspection_thermal.egg-info/SOURCES.txt'
+[1.376s] running build_ext
+[1.376s] Creating /home/vincent/gz/ws_inspect/install/inspection_thermal/lib/python3.12/site-packages/inspection-thermal.egg-link (link to src)
+[1.381s] Installing thermal_alarm_node script to /home/vincent/gz/ws_inspect/install/inspection_thermal/bin
+[1.381s] 
+[1.381s] Installed /home/vincent/gz/ws_inspect/build/inspection_thermal/src
+[1.382s] running symlink_data
+[1.382s] creating /home/vincent/gz/ws_inspect/install/inspection_thermal/share/ament_index
+[1.382s] creating /home/vincent/gz/ws_inspect/install/inspection_thermal/share/ament_index/resource_index
+[1.382s] creating /home/vincent/gz/ws_inspect/install/inspection_thermal/share/ament_index/resource_index/packages
+[1.382s] symbolically linking /home/vincent/gz/ws_inspect/build/inspection_thermal/resource/inspection_thermal -> /home/vincent/gz/ws_inspect/install/inspection_thermal/share/ament_index/resource_index/packages
+[1.382s] symbolically linking /home/vincent/gz/ws_inspect/build/inspection_thermal/package.xml -> /home/vincent/gz/ws_inspect/install/inspection_thermal/share/inspection_thermal
+[1.415s] Invoked command in '/home/vincent/gz/ws_inspect/build/inspection_thermal' returned '0': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/vincent/gz/ws_inspect/build/inspection_thermal/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vincent/gz/ws_inspect/install/inspection_thermal/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/vincent/gz/ws_inspect/build/inspection_thermal/build --no-deps symlink_data

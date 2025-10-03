@@ -1,0 +1,29 @@
+mission_node:
+  ros__parameters:
+    loop: true
+    alarm_stop: true
+    waypoints:
+      - header:
+          frame_id: "map"
+        pose:
+          position:
+            x: 2.0
+            y: 0.0
+            z: 0.0
+          orientation:
+            x: 0.0
+            y: 0.0
+            z: 0.0
+            w: 1.0
+      - header:
+          frame_id: "map"
+        pose:
+          position:
+            x: 6.0
+            y: 1.5
+            z: 0.0
+          orientation:
+            x: 0.0
+            y: 0.0
+            z: 0.7071
+            w: 0.7071

@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="ped_actor">
+    <pose>0 0 0 0 0 0</pose>
+    <link name="body">
+      <inertial>
+        <mass>75.0</mass>
+        <inertia>
+          <ixx>2.0</ixx>
+          <iyy>2.0</iyy>
+          <izz>1.0</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>1.7</length>
+          </cylinder>
+        </geometry>
+        <pose>0 0 0.85 0 0 0</pose>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>1.7</length>
+          </cylinder>
+        </geometry>
+        <pose>0 0 0.85 0 0 0</pose>
+        <material>
+          <ambient>0.2 0.4 0.8 1</ambient>
+          <diffuse>0.2 0.4 0.8 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

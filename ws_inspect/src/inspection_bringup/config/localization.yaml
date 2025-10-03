@@ -1,0 +1,25 @@
+amcl:
+  ros__parameters:
+    use_sim_time: true
+    global_frame_id: map
+    odom_frame_id: odom
+    base_frame_id: base_link
+    tf_broadcast: true
+    max_particles: 800
+    min_particles: 300
+    laser_model_type: likelihood_field
+    alpha1: 0.2
+    alpha2: 0.2
+    alpha3: 0.2
+    alpha4: 0.2
+    alpha5: 0.2
+    update_min_a: 0.2
+    update_min_d: 0.25
+    scan_topic: scan
+    map_topic: map
+
+map_server:
+  ros__parameters:
+    use_sim_time: true
+    frame_id: map
+    yaml_filename: ""

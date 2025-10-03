@@ -1,0 +1,24 @@
+obstacle_layer:
+  enabled: true
+  footprint_clearing_enabled: true
+  max_obstacle_height: 0.6
+  observation_sources: lidar
+  lidar:
+    data_type: LaserScan
+    topic: scan
+    marking: true
+    clearing: true
+    expected_update_rate: 0.2
+    inf_is_valid: false
+    raytrace_range: 12.0
+    obstacle_range: 10.0
+inflation_layer:
+  enabled: true
+  inflation_radius: 0.45
+static_layer:
+  enabled: true
+  map_subscribe_transient_local: true
+
+robot_properties:
+  footprint: [[0.25, 0.2], [-0.25, 0.2], [-0.25, -0.2], [0.25, -0.2]]
+  robot_radius: 0.3

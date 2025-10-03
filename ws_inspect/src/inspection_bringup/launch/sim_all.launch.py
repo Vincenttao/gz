@@ -79,8 +79,6 @@ def _launch_setup(context):
         "/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist",
         "/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry",
         "/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan",
-        "/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V",
-        "/tf_static@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V",
     ]
 
     bridge_node = Node(
@@ -89,12 +87,7 @@ def _launch_setup(context):
         name="ros_gz_bridge",
         arguments=bridge_topics,
         output="screen",
-        parameters=[
-            {
-                "qos_overrides./tf_static.publisher.durability": "transient_local",
-                "qos_overrides./tf_static.subscription.durability": "transient_local",
-            }
-        ],
+        parameters=[],
     )
 
     odom_tf_node = Node(

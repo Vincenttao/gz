@@ -11,8 +11,12 @@ from geometry_msgs.msg import Pose
 from rclpy.duration import Duration
 from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
-from rclpy.parameter import Parameter
-from rcl_interfaces.msg import ParameterDescriptor, ParameterType, ParameterValue
+from rclpy.parameter import Parameter, ParameterValue
+from rcl_interfaces.msg import (
+    ParameterDescriptor,
+    ParameterType,
+    ParameterValue as ParameterValueMsg,
+)
 from rclpy.qos import QoSHistoryPolicy, QoSProfile, QoSReliabilityPolicy
 from rclpy.time import Time as RclTime
 from std_msgs.msg import Bool, String
@@ -45,12 +49,8 @@ class ThermalAlarmNode(Node):
         self._alarm_pub = self.create_publisher(Bool, "/inspection/alarm", qos)
         self._event_pub = self.create_publisher(String, "/inspection/event", qos)
 
-        # Explicitly type as STRING_ARRAY to match YAML string-array overrides
-        self.declare_parameter(
-            "hot_targets",
-            ParameterValue(type=ParameterType.PARAMETER_STRING_ARRAY, string_array_value=[]),
-            descriptor=ParameterDescriptor(type=ParameterType.PARAMETER_STRING_ARRAY),
-        )
+        # Use simpler parameter declaration with explicit type hints
+        self.declare_parameter("hot_targets", [], descriptor=ParameterDescriptor(type=ParameterType.PARAMETER_STRING_ARRAY))
         self.declare_parameter("trigger_distance", 2.0)
         self.declare_parameter("hysteresis", 0.3)
         self.declare_parameter("check_rate_hz", 10)

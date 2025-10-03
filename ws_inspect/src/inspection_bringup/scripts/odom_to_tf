@@ -5,6 +5,7 @@ from nav_msgs.msg import Odometry
 from geometry_msgs.msg import TransformStamped
 from tf2_ros import TransformBroadcaster
 
+
 class OdomToTF(Node):
     def __init__(self):
         super().__init__('odom_to_tf')
@@ -14,13 +15,15 @@ class OdomToTF(Node):
     def _cb(self, msg: Odometry):
         t = TransformStamped()
         t.header.stamp = msg.header.stamp
-        t.header.frame_id = msg.header.frame_id or 'odom'
-        t.child_frame_id = msg.child_frame_id or 'base_link'
+        # Map frame IDs to what navigation expects
+        t.header.frame_id = 'odom'
+        t.child_frame_id = 'base_link'
         t.transform.translation.x = msg.pose.pose.position.x
         t.transform.translation.y = msg.pose.pose.position.y
         t.transform.translation.z = msg.pose.pose.position.z
         t.transform.rotation = msg.pose.pose.orientation
         self._br.sendTransform(t)
+
 
 def main():
     rclpy.init()
@@ -32,6 +35,7 @@ def main():
     finally:
         node.destroy_node()
         rclpy.try_shutdown()
+
 
 if __name__ == '__main__':
     main()

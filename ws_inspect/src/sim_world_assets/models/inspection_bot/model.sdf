@@ -218,12 +218,7 @@
       <max_angular_speed>1.2</max_angular_speed>
     </plugin>
 
-    <!-- Publish TF via PosePublisher (bridged to ROS2 /tf) -->
-    <plugin name="gz::sim::systems::PosePublisher" filename="libgz-sim-pose-publisher-system.so">
-      <publish_tf>true</publish_tf>
-      <publish_tf_per_link>false</publish_tf_per_link>
-      <update_frequency>30</update_frequency>
-    </plugin>
+    <!-- PosePublisher removed; rely on ROS odom_to_tf for TF -->
 
   </model>
 </sdf>

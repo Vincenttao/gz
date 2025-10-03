@@ -97,7 +97,14 @@ def _launch_setup(context):
         ],
     )
 
-    return [world_launch, bridge_node, nav2_launch, mission_node, thermal_node]
+    odom_tf_node = Node(
+        package="inspection_bringup",
+        executable="odom_to_tf",
+        name="odom_to_tf",
+        output="screen",
+    )
+
+    return [world_launch, bridge_node, odom_tf_node, nav2_launch, mission_node, thermal_node]
 
 
 def generate_launch_description() -> LaunchDescription:

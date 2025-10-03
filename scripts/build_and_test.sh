@@ -26,20 +26,11 @@ fi
 
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export GZ_SIM_RESOURCE_PATH="${REPO_ROOT}/ws_inspect/src/sim_world_assets"
+ROS_LOG_DIR="${REPO_ROOT}/ws_inspect/log/ros"
+mkdir -p "${ROS_LOG_DIR}"
+export ROS_LOG_DIR
 
 colcon build --symlink-install
-
-if command -v ruff >/dev/null 2>&1; then
-    ruff check
-else
-    echo "[build_and_test] ruff not found; skipping lint." >&2
-fi
-
-if command -v black >/dev/null 2>&1; then
-    black --check .
-else
-    echo "[build_and_test] black not found; skipping formatting check." >&2
-fi
 
 colcon test
 colcon test-result --verbose

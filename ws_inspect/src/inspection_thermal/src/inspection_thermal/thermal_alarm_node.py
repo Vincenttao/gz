@@ -11,8 +11,8 @@ from geometry_msgs.msg import Pose
 from rclpy.duration import Duration
 from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
-from rclpy.parameter import Parameter, ParameterValue
-from rcl_interfaces.msg import ParameterDescriptor, ParameterType
+from rclpy.parameter import Parameter
+from rcl_interfaces.msg import ParameterDescriptor, ParameterType, ParameterValue
 from rclpy.qos import QoSHistoryPolicy, QoSProfile, QoSReliabilityPolicy
 from rclpy.time import Time as RclTime
 from std_msgs.msg import Bool, String
@@ -48,7 +48,7 @@ class ThermalAlarmNode(Node):
         # Explicitly type as STRING_ARRAY to match YAML string-array overrides
         self.declare_parameter(
             "hot_targets",
-            ParameterValue(type_=Parameter.Type.STRING_ARRAY, string_array_value=[]),
+            ParameterValue(type=ParameterType.PARAMETER_STRING_ARRAY, string_array_value=[]),
             descriptor=ParameterDescriptor(type=ParameterType.PARAMETER_STRING_ARRAY),
         )
         self.declare_parameter("trigger_distance", 2.0)
